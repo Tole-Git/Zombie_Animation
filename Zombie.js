@@ -49,7 +49,7 @@ class Zombie {
         this.HITMAXPEAK = false;
 
         //basic restrictions
-        this.GROUND = 600;
+        this.GROUND = 450;
         this.MAX_RUN = 600;
         this.MAX_WALK = 200;
         this.ACCELERATION = 20;
@@ -65,7 +65,7 @@ class Zombie {
         this.velocity = {x: 0,y: 0};
     }
 
-    horizontalUpdate() {
+    horizontalUpdate() { //Updates left and right movement
         if (this.game.left && !this.game.right) {
             this.facing = this.LEFT;
             if (this.game.run) {
