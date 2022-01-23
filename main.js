@@ -5,6 +5,7 @@ const ASSET_MANAGER = new AssetManager();
 //images
 ASSET_MANAGER.queueDownload("./zombie.png");
 ASSET_MANAGER.queueDownload("./cemetary.png");
+ASSET_MANAGER.queueDownload("./defender.png");
 
 ASSET_MANAGER.downloadAll(() => {
 	const canvas = document.getElementById("gameWorld");
@@ -13,6 +14,8 @@ ASSET_MANAGER.downloadAll(() => {
 
 	//entities
 	gameEngine.addEntity(new Zombie(gameEngine));
+	gameEngine.addEntity(new Hero(gameEngine, 0));
+	gameEngine.addEntity(new Hero(gameEngine, -500));
 	gameEngine.addEntity(new Cemetary(gameEngine, 1, 1));
 
 
